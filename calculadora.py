@@ -37,21 +37,29 @@ def obtener_promedio():
 #print(obtener_promedio()) #average
 
 #create menu
+#version before version 3.10
 
 def call_to_the_option(opt):
-    
-    match opt:
-            case "1":
-                imprimir_porcentajes()
-            case "2":
-                imprimir_porcentajes()
-            case "3":
-                obtener_promedio()
-            case "4":
-                print("option 4")      
-            case _:
-                print("incorrect option")
-    return
+    opt ={
+         1:imprimir_porcentajes,
+         2:imprimir_porcentajes,
+         3:obtener_promedio,
+        }
+    return 
+
+#after version 3.10
+#match opt:
+#            case "1":
+#                imprimir_porcentajes()
+#            case "2":
+#                imprimir_porcentajes()
+#            case "3":
+#                obtener_promedio()
+#            case "4":
+#                print("option 4")      
+#            case _:
+#                print("incorrect option")
+#return
           
 
 def print_menu():
@@ -72,6 +80,7 @@ def main_menu():
         print_menu()
         while opt !=0:
             call_to_option(opt)
+            option[opt]()
             print_menu()
             opt = float(input("Ingrese Valor:"))
                 
