@@ -1,4 +1,4 @@
-<h2>Practicas de python</h2>
+<h2>Python Practices</h2>
 
 <span>
 Python Programming Elementary Exercises, Practices on Variables, While, For, Logical and Arithmetics Operands.
