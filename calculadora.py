@@ -3,14 +3,13 @@
 
 def porcentaje(porcentaje, precio,tipo):
     if tipo == True:
-        #si el aumento es true
+        #if is true
         porcentaje = porcentaje+1
     else:
         porcentaje=1.0-porcentaje    
     
     valor=(precio * float(porcentaje)) 
     return valor
-
 
 
 def imprimir_porcentajes():
@@ -32,6 +31,52 @@ def obtener_promedio():
             counter+=1
             valor = float(input("Ingrese Valor:"))
         return int(suma/counter)
-#imprimir_porcentajes()
 
-print(obtener_promedio())
+
+#imprimir_porcentajes() #porcentual value
+#print(obtener_promedio()) #average
+
+#create menu
+
+def call_to_the_option(opt):
+    
+    match opt:
+            case "1":
+                imprimir_porcentajes()
+            case "2":
+                imprimir_porcentajes()
+            case "3":
+                obtener_promedio()
+            case "4":
+                print("option 4")      
+            case _:
+                print("incorrect option")
+    return
+          
+
+def print_menu():
+    print("1) Porcentaje Aumento");
+    print("2) Porcentaje Descuento");
+    print("3) Promedio");
+    print("4) Conversor de Moneda");
+    print("-------------------------");
+    print("0)Salir");
+    return
+
+
+
+
+def main_menu():
+        opt = float(input("Please insert an option:"))
+        #while cicle end if you put an 0 value
+        print_menu()
+        while opt !=0:
+            call_to_option(opt)
+            print_menu()
+            opt = float(input("Ingrese Valor:"))
+                
+        return
+        
+    
+
+main_menu()
